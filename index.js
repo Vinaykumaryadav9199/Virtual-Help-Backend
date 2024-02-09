@@ -16,7 +16,7 @@ const BlogsPage = require('./Routes/BlogsPage')
 
 
 app.use(cors({
-    origin: ['https://virtual-help.vercel.app/'],
+    origin: ['https://virtual-help.vercel.app'],
     credentials: true,
     sameSite: 'none'
 }));
