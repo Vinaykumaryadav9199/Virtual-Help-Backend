@@ -15,11 +15,12 @@ app.use(express.json({limit:'100mb'}));
 const BlogsPage = require('./Routes/BlogsPage')
 
 
-app.use(cors({
-    origin: ['https://virtual-help.vercel.app'],
-    credentials: true,
-    sameSite: 'none'
-}));
+// app.use(cors({
+//     origin: ['https://virtual-help.vercel.app'],
+//     credentials: true,
+//     sameSite: 'none'
+// }));
+app.use(cors())
 // app.use(cors({ credentials: true, origin: 'http://localhost:3000' ,sameSite: 'lax' }));
 app.use("/" ,NotesRouter)
 app.use("/" ,authRouter)
