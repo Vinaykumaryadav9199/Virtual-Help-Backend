@@ -197,8 +197,8 @@ router.post("/Login" ,async(req, res)=>{
                 path: '/',
                 httpOnly: true,
                // secure: process.env.NODE_ENV === 'production', // Ensure HTTPS in production
-                secure: true,
-                sameSite: 'none', // Adjust as needed
+                secure: false,
+                sameSite: 'strict', // Adjust as needed
               }).send({
                 code:200,
                 message:"Succesfully Login",
