@@ -16,7 +16,7 @@ const BlogsPage = require('./Routes/BlogsPage')
 
 
 app.use(cors({
-    origin: ['https://virtualhelp1.netlify.app'],
+    origin: ['https://virtualhelp.vercel.app'],
     credentials: true,
     sameSite: 'none'
 }));
