@@ -16,7 +16,7 @@ const BlogsPage = require('./Routes/BlogsPage')
 
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['https://virtual-help-git-main-vinay-kumar-yadavs-projects.vercel.app'],
     credentials: true,
     sameSite: 'none'
 }));
