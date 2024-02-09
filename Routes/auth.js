@@ -193,7 +193,7 @@ router.post("/Login" ,async(req, res)=>{
             //   });
 
             res.cookie('token', authToken, {
-                domain:'virtualhelp1.netlify.app',
+                domain:'.virtualhelp1.netlify.app',
                 path: '/',
                 httpOnly: true,
                // secure: process.env.NODE_ENV === 'production', // Ensure HTTPS in production
