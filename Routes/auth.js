@@ -193,7 +193,7 @@ router.post("/Login" ,async(req, res)=>{
             //   });
 
             res.cookie('token', authToken, {
-                domain:'virtualhelp.vercel.app',
+                domain:'www.virtualhelp.vercel.app',
                 path: '/',
                 httpOnly: true,
                // secure: process.env.NODE_ENV === 'production', // Ensure HTTPS in production
