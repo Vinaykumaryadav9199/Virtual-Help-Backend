@@ -27,14 +27,13 @@ router.get('/',(req,res)=>
 {
     res.send("ok Every thing is fine ")
 })
-router.post('/notes/upload',verifyToken,(req ,res)=>
+router.post('/notes/upload',verifyToken,async(req ,res)=>
 {   
-    const uploadedby = req.User
-    const {Program , Course , Semester , Subject,Pdflink } = req.body
-    console.log(req.body.Pdflink);
+    const uploadedby = await req.User
+    const {Program , Course , Semester , Subject,Pdflink } = await req.body
     const  Notes = new notes({Program , Course,Semester,Subject,Pdflink,uploadedby});
         Notes.save().then(()=>{
-            console.log("data saved")
+            
             res.send({code:200,message:"Notes Uploaded Successfully"})
         }).catch((err)=>{
             res.send({code:201, message:"internal Server Error"})
