@@ -382,7 +382,7 @@ router.get("/CheckLogin" ,async(req ,res)=>{
 
 // Assuming you have an Express route for logout
 router.get('/logout', (req, res) => {
-    res.clearCookie('token');
+    res.clearCookie('token' , { domain: 'virtual-help-backend.vercel.app' });
     res.redirect('/'); // Redirect to the home page or any other desired destination
 });
 
