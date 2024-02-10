@@ -25,7 +25,7 @@ router.get('/',(req,res)=>
 router.post('/notes/upload',verifyToken,(req ,res)=>
 {   
     const uploadedby =  req.User
-   console.log(uploadedBy)
+  
     const {Program , Course , Semester , Subject,Pdflink } = req.body
     const  Notes = new notes({Program , Course,Semester,Subject,Pdflink,uploadedby});
         Notes.save().then(()=>{
