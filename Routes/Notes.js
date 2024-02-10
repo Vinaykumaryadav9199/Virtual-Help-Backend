@@ -1,5 +1,4 @@
 const express = require ("express")
-const cookieParser = require('cookie-parser');
 const router  = express.Router()
 const notes = require("../Database/Model/nodesModel.js")
 const verifyToken = require('../Routes/verifyToken.js')
