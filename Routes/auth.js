@@ -193,12 +193,12 @@ router.post("/Login" ,async(req, res)=>{
             //   });
 
             res.cookie('token', authToken, {
-                domain:'.vercel.app',
+                // domain:'.vercel.app',
                 path: '/',
                 httpOnly: true,
                // secure: process.env.NODE_ENV === 'production', // Ensure HTTPS in production
-                secure: false,
-                sameSite: 'strict', // Adjust as needed
+                secure:true,
+                sameSite: 'none', // Adjust as needed
               }).send({
                 code:200,
                 message:"Succesfully Login",
