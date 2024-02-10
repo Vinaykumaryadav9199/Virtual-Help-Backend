@@ -62,7 +62,7 @@ router.post("/sendOtp" ,async(req ,res)=>{
                     } else {
                      res.send({
                         code:200,
-                        message:"Opt Sended"
+                        message:"OTP Sended"
                      })
                     }
                   });
@@ -240,7 +240,7 @@ router.post("/forgetPasswordOtp" , async(req , res)=>{
         const otpExist = await userVerification.findOne({Email})
         if(otpExist)
         {
-            const otp =otpgenrator.generate(6, { upperCaseAlphabets: false, specialChars: false });
+            const otp =otpgenrator.generate(6, { upperCaseAlphabets: false, specialChars: false ,lowerCaseAlphabets:false });
             userVerification.updateOne({Email:Email} ,{$set:{OTP:otp}}).then(()=>{
                 const mailOptions = {
                     from: 'virtualhelp62@gmail.com',
@@ -256,7 +256,7 @@ router.post("/forgetPasswordOtp" , async(req , res)=>{
                     } else {
                      res.send({
                         code:200,
-                        message:"Opt Sended"
+                        message:"OTP Sended"
                      })
                     }
                   });
@@ -269,7 +269,7 @@ router.post("/forgetPasswordOtp" , async(req , res)=>{
             })
         }
         else{
-            const otp =otpgenrator.generate(6, { upperCaseAlphabets: false, specialChars: false });
+            const otp =otpgenrator.generate(6, { upperCaseAlphabets: false, specialChars: false ,lowerCaseAlphabets:false });
             const newVerification =  new userVerification({Email:Email ,OTP:otp})
             newVerification.save().then(()=>{
                 const mailOptions = {
@@ -286,7 +286,7 @@ router.post("/forgetPasswordOtp" , async(req , res)=>{
                     } else {
                      res.send({
                         code:200,
-                        message:"Opt Sended"
+                        message:"OTP Sended"
                      })
                     }
                   });
@@ -330,6 +330,7 @@ router.post("/resetPassword" ,async(req ,res)=>{
                     code:200,
                     message:"Password Succesfully Reset"
                 })
+                res.redirect('/Login');
             })
         }
         else{
