@@ -3,10 +3,6 @@ const cookieParser = require('cookie-parser');
 const router  = express.Router()
 const notes = require("../Database/Model/nodesModel.js")
 const verifyToken = require('../Routes/verifyToken.js')
-const app = express();
-app.use(cookieParser());
-
-
 
 router.get("/getNotes", async(req ,res)=>{
    // console.log(req.cookies.aid)
