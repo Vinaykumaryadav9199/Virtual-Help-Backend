@@ -22,10 +22,10 @@ router.get('/',(req,res)=>
 {
     res.send("ok Every thing is fine ")
 })
-router.post('/notes/upload',verifyToken,async(req ,res)=>
+router.post('/notes/upload',verifyToken,(req ,res)=>
 {   
-    const uploadedby = await req.User
-    const {Program , Course , Semester , Subject,Pdflink } = await req.body
+    const uploadedby =  req.User
+    const {Program , Course , Semester , Subject,Pdflink } = req.body
     const  Notes = new notes({Program , Course,Semester,Subject,Pdflink,uploadedby});
         Notes.save().then(()=>{
             
